@@ -1,7 +1,10 @@
-name: Build CleanYourTV Test APK
+name: Build CleanYourTV AI PONT APK
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -36,6 +39,6 @@ jobs:
       - name: Upload test APK
         uses: actions/upload-artifact@v4
         with:
-          name: cleanyourtv-test-apk
+          name: cleanyourtv-ai-pont-apk
           path: launcher/app/build/outputs/apk/release/*.apk
           if-no-files-found: error
